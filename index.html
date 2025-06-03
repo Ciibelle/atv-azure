@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listagem de Usuários</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Usuários</h1>
+    <button id="showUsersBtn">Mostrar Usuários</button>
+    <ul id="userList" class="hidden"></ul>
+  </div>
+
+  <script>
+    const users = ["Alice", "Bruno", "Carla", "Daniel", "Elisa"];
+    const showUsersBtn = document.getElementById("showUsersBtn");
+    const userList = document.getElementById("userList");
+
+    showUsersBtn.addEventListener("click", () => {
+      userList.innerHTML = ""; // limpa lista
+      users.forEach(user => {
+        const li = document.createElement("li");
+        li.textContent = user;
+        userList.appendChild(li);
+      });
+      userList.classList.remove("hidden");
+    });
+  </script>
+</body>
+</html>
